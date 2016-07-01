@@ -40,7 +40,7 @@ var createCanvas = function (userInput) {
             var pix = document.createElement("div");
             pix.className = "pixels";
             column.appendChild(pix);
-            pix.addEventListener('mouseover', paint);
+            pix.addEventListener('click', paint);
             pix.addEventListener('contextmenu', erase);
         }
     }
@@ -57,6 +57,7 @@ window.onload = function () {
     }
 
     var inspan = document.createElement("span");
+    inspan.innerHTML = "Change canvas size";
     var changeSize = document.createElement('input');
     changeSize.type = 'number';
     changeSize.id = "sizeInput";
@@ -78,5 +79,4 @@ window.onload = function () {
 var erase = function (click) {
     event.preventDefault();
     event.target.style.backgroundColor = "white";
-
-}
+};
