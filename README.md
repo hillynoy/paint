@@ -1,5 +1,7 @@
 Paint95
 
+HTML -- JAVASCRIPT -- CSS
+
 features-
 
 1. Choose a color and paint on the canvas.
