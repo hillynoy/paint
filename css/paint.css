@@ -1,6 +1,7 @@
 button {
     height: 80px;
     width: 80px;
+    display: inline-block;
 }
 
 .red {
@@ -12,7 +13,7 @@ button {
 }
 
 .blue {
-    background-color: #00BFFF;
+    background-color: #0000ff;
 }
 
 .green {
@@ -57,4 +58,35 @@ button {
     border: 1px deeppink solid;
     height: 20px;
     width: 100px;
+}
+
+#canvas {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+body {
+    background-image: url("../pics/paint2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colorSpan {
+    /*margin-left: 30%;*/
+text-align: center;
+}
+
+#title {
+    font-family: PaintyPaint;
+    font-size: 500%;
+    float: right;
+    color: #f5f2ef;
+    margin-right: 5%;
+    z-index: 10;
+}
+
+.userInput {
+height: 20px;
+    width:50px;
 }

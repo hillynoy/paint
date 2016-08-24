@@ -4,11 +4,13 @@ var colorArr = ["red", "yellow", "blue","green","pink","orange", "white"];
 var defaultSize = 50;
 var span = document.createElement("span");
 document.body.appendChild(span);
+span.className = "colorSpan";
 
 
 var changeCanvasSize = function () {
     // read input - put in var.
     var userInput = document.getElementById('sizeInput').value;
+    userInput.className = "userInput";
 
     //remove canvas
     document.getElementById("canvas").remove();
@@ -48,21 +50,15 @@ var createCanvas = function (userInput) {
 
 //creating elements
 window.onload = function () {
-    for (var i = 0; i < colorArr.length; i++) {
-        var btn = document.createElement('button');
-        btn.classList.add(colorArr[i]);
-        btn.value=colorArr[i];
-        btn.addEventListener('click', changeColor);         //adding event listeners to the buttons
-        span.appendChild(btn);
-    }
+
 
     var inspan = document.createElement("span");
     inspan.innerHTML = "Change canvas size";
     var changeSize = document.createElement('input');
     changeSize.type = 'number';
     changeSize.id = "sizeInput";
-
     inspan.appendChild(changeSize);
+
 
     var submit = document.createElement("button");
     submit.textContent = "Submit";
@@ -70,10 +66,21 @@ window.onload = function () {
     inspan.appendChild(submit);
     submit.addEventListener('click', changeCanvasSize);
 
+
     // changeSize.addEventListener('click', changeCanvasSize)
     document.body.appendChild(inspan);
     createCanvas(defaultSize);
+
+
+     for (var i = 0; i < colorArr.length; i++) {
+        var btn = document.createElement('button');
+        btn.classList.add(colorArr[i]);
+        btn.value=colorArr[i];
+        btn.addEventListener('click', changeColor);         //adding event listeners to the buttons
+        span.appendChild(btn);
+    }
 };
+
 
 // create an eraser on right click
 var erase = function (click) {
